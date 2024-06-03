@@ -15,7 +15,10 @@
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
+Cypress.Commands.add('visit500ml', () => {
+  cy.visit('https://500ml.vercel.app/')
+})
+
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
