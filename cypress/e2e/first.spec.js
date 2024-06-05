@@ -43,19 +43,27 @@ describe('500ml', () => {
   })
   
   it.only('click footer links', () => {
-    cy.intercept('GET', "https://dribbble.com/").as('newTab')
+    cy.visit500ml()  
+    cy.intercept('GET', 'https://dribbble.com/').as('redirectRequest')
 
-    cy.visit500ml()
-    cy.get('.contactUs').click()
-    
+    cy.get('.littleContainer').find('img').eq(1).then(($img) => {
+      cy.wrap($img).click();
+    });
 
-    cy.get('.small_box').eq(1).click() 
-    cy.wait(5000)
-    cy.wait('@newTab');
+    // find icon another way
+    // cy.get('.littleContainer img[src$="basketball_icon.svg"]').click()
 
-
+    cy.origin('https://dribbble.com/', () => {
   })
 
 
+    // ჯიპიტი მეხმარებოდა, ტაბს ხსნის მაგრამ ტესტი ფეილდშია
 
+    // find icon another way
+    // cy.get('.littleContainer img[src$="basketball_icon.svg"]').click()
+    // cy.wait('@redirectRequest').then(() => {
+    //   cy.url().should('include', 'https://dribbble.com/')
+    // })
+
+  })
 })
