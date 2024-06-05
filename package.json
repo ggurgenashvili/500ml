@@ -1,5 +1,9 @@
 {
   "devDependencies": {
-    "cypress": "^13.10.0"
+    "cypress": "^13.10.0",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "xxx": "^0.0.1"
   }
 }
